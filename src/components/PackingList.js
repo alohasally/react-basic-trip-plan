@@ -5,15 +5,19 @@ export default function PackingList({ items, onToggle, onDelete, onClean }) {
   const [sortedBy, setSortedBy] = useState("input");
 
   let sortedByItems;
+
   if (sortedBy === "input") sortedByItems = items;
+
   if (sortedBy === "packed")
     sortedByItems = items
       .slice()
       .sort((a, b) => Number(a.packed) - Number(b.packed));
+
   if (sortedBy === "description")
-    sortedByItems
+    sortedByItems = items
       .slice()
-      .sort((a, b) => a.description.localCompare(b.description));
+      .sort((a, b) => a.description.localeCompare(b.description));
+
   return (
     <div className="list">
       <ul>
