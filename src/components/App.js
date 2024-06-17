@@ -10,7 +10,11 @@ export default function App() {
   const handleToggle = (id) => {
     setItems((items) =>
       items.map((item) =>
+<<<<<<< HEAD
         item.id === id ? { ...item, packed: !item.packed } : item
+=======
+        item.id === id ? { ...items, packed: !item.packed } : item
+>>>>>>> origin/main
       )
     );
   };
