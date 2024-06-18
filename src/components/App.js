@@ -10,16 +10,18 @@ export default function App() {
   const handleToggle = (id) => {
     setItems((items) =>
       items.map((item) =>
-<<<<<<< HEAD
         item.id === id ? { ...item, packed: !item.packed } : item
-=======
-        item.id === id ? { ...items, packed: !item.packed } : item
->>>>>>> origin/main
       )
     );
   };
   const handleCleanList = () => {
-    setItems([]);
+    const confirmClean = window.confirm(
+      "You Really Want to delete all the List?"
+    );
+
+    if (confirmClean) {
+      setItems([]);
+    }
   };
 
   const handleDelete = (id) => {
@@ -35,7 +37,7 @@ export default function App() {
         onClean={handleCleanList}
         onDelete={handleDelete}
       />
-      <Stats />
+      <Stats items={items} />
     </div>
   );
 }

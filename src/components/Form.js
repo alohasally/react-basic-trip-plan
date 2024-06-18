@@ -21,15 +21,10 @@ export default function Form({ items, setItems }) {
           value={number}
           onChange={(e) => setNumber(Number(e.target.value))}
         >
-<<<<<<< HEAD
           {Array.from({ length: 20 }, (_, i) => i + 1).map((num) => (
             <option value={num} key={num}>
               {num}
             </option>
-=======
-          {Array.from({ length: 20 }, (_, i) => (
-            <option>{i + 1}</option>
->>>>>>> origin/main
           ))}
         </select>
         <input
